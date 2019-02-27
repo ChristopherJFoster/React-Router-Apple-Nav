@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import NavData from "./nav_data/NavData";
+import navdata from "./nav_data/navdata";
 import NavWrapper from "./components/NavWrapper";
 // import Nav from "./components/Nav";
 // import SubNav from "./components/SubNav";
@@ -10,23 +10,23 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      NavData: []
+      navdata: []
     };
   }
 
   componentDidMount() {
     this.setState({
-      NavData: NavData
+      navdata: navdata
     });
   }
 
   render() {
-    console.log(this.state.NavData);
+    console.log(this.state.navdata);
     return (
       <Route
         path="/"
         render={routeProps => (
-          <NavWrapper {...routeProps} NavData={this.state.NavData} />
+          <NavWrapper {...routeProps} navdata={this.state.navdata} />
         )}
       />
     );
